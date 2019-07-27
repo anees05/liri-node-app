@@ -1,8 +1,8 @@
 require("dotenv").config();
 
 var keys = require("./keys.js");
-var spotify = new spotify(keys.spotify);
-
+var Spotify = require("node-spotify-api");
+var Spotify = new Spotify(keys.spotify);
 var axios = require("axios");
 var fs = require("fs");
 var moment = require("moment");
@@ -10,27 +10,50 @@ var moment = require("moment");
 var command = process.argv[2];
 var userSearch = process.argv.slice(3).join(" ");
 
-function runLiri(command, userSearch){
+function runLiri(command, userSearch) {
     switch (command) {
         case "spotify-this-song":
             getSpotify(userSearch);
-        break;
+            break;
 
         case "concert-this":
             getBandsInTown(userSearch);
-        break;
+            break;
 
         case "movie-this":
             getOMB(userSearch);
-        break;
+            break;
 
         case "do-what-it-says":
             getRandom();
-        break;
+            break;
 
-        default: 
+        default:
             console.log("Please enter a valid command");
-        
+
     }
 };
 
+function getBandsInTown(artist) {
+    var artist = userSearch;
+    var bandQueryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
+
+    axios.get(bandQueryURL).then(
+        function (response) {
+            console.log("===================");
+            // console.log(response);
+            console.log("Name of the Venue " + response.data[0].venue.name + "\r\n");
+            console.log("Venue location " + response.data[0].venue.city + "\r\n");
+            console.log("Date of event " + moment(response.date[0].datetime).format("MM-DD-YYYY") + "\r\n");
+
+            var logConcert = "=====Concert Log Entry=====" + "\nName of the musician " + artist + "\nName of the venue " + venue + "\nName of city " + city + "\nDate of event " + date
+
+            fs.appendFile("log.txt", logConcert, function (err) {
+                if (err) throw err;
+            });
+        });
+};
+
+
+
+runLiri(command, userSearch);
