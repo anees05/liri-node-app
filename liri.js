@@ -111,5 +111,21 @@ function getSpotify(songName) {
             if (err) throw err;
         });
     });
-}
+};
+
+function getRandom() {
+    fs.readFile("random.txt", "utf8", function (error, data){
+        if (error) {
+            return console.log (error);
+        } else {
+            console.log (data);
+            
+            var randomData = data.split(",");
+            runLiri(randomData[0], randomData[1]);
+        }
+        console.log("\r\n" + "test: " + randomData[0] + randomData[1]);
+    });
+};
+
+
 runLiri(command, userSearch);
