@@ -36,17 +36,17 @@ function runLiri(command, userSearch) {
 function getBandsInTown(artist) {
     var artist = userSearch;
     var bandQueryURL = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
- 
-   
+
+
     axios.get(bandQueryURL).then(
         function (response) {
             console.log("===================");
             console.log(response);
-            // console.log("Name of the Venue " + response.data[0].venue.name + "\r\n");
-            // console.log("Venue location " + response.data[0].venue.city + "\r\n");
-            // console.log("Date of event " + moment(response.data[0].datetime).format("MM-DD-YYYY") + "\r\n");
+            console.log("Name of the Venue " + response.data[0].venue.name + "\r\n");
+            console.log("Venue location " + response.data[0].venue.city + "\r\n");
+            console.log("Date of event " + moment(response.data[0].datetime).format("MM-DD-YYYY") + "\r\n");
 
-            var logConcert = "=====Concert Log Entry=====" + "\nName of the musician " + artist + "\nName of the venue " + venue + "\nName of city " + city + "\nDate of event " + date
+            var logConcert = "=====Concert Log Entry=====" + "\nName of the musician " + artist + "\nName of the venue " + response.data[0].venue.name + "\nName of city " + response.data[0].venue.city + "\nDate of event " +  moment(response.data[0].datetime).format("MM-DD-YYYY")
 
             fs.appendFile("log.txt", logConcert, function (err) {
                 if (err) throw err;
@@ -89,11 +89,12 @@ function getSpotify(songName) {
     var spotify = new Spotify(keys.spotify);
     console.log("Spotify key: " + spotify);
 
-    if(!songName) {
+
+    if (!songName) {
         songName = "The Sign";
     };
 
-    spotify.search({ type: "track", query: songName }, function (err, data){
+    spotify.search({ type: "track", query: songName }, function (err, data) {
         if (err) {
             return console.log("Error" + err);
         }
@@ -104,22 +105,22 @@ function getSpotify(songName) {
         console.log("Song Name: " + data.tracks.items[0].name + "\r\n");
         console.log("Song Preview Link: " + data.tracks.items[0].href + "\r\n");
         console.log("Album: " + data.tracks.items[0].album.name + "\r\n");
-        
-        var logSong = "=====Spotify Log Entry=====" + "\nArtist(s): " + data.tracks.items[0].albumt.artist[0].name + "\nSong Name: " + data.tracks.items[0].name + "\nSong Link: " + data.tracks.items[0].href + "\nAlbum: " + data.tracks.items[0].album.name
-        
-        fs.appendFile("log.txt", logSong, function (err){
+
+        var logSong = "=====Spotify Log Entry=====" + "\nArtist(s): " + data.tracks.items[0].album.artist[0].name + "\nSong Name: " + data.tracks.items[0].name + "\nSong Link: " + data.tracks.items[0].href + "\nAlbum: " + data.tracks.items[0].album.name
+
+        fs.appendFile("log.txt", logSong, function (err) {
             if (err) throw err;
         });
     });
 };
 
 function getRandom() {
-    fs.readFile("random.txt", "utf8", function (error, data){
+    fs.readFile("random.txt", "utf8", function (error, data) {
         if (error) {
-            return console.log (error);
+            return console.log(error);
         } else {
-            console.log (data);
-            
+            console.log(data);
+
             var randomData = data.split(",");
             runLiri(randomData[0], randomData[1]);
         }
@@ -127,5 +128,10 @@ function getRandom() {
     });
 };
 
+function logResult(data) {
+    fs.appendFile("log.txt", data, function (err) {
+        if (err) throw (err);
+    });
+};
 
 runLiri(command, userSearch);
