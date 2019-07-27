@@ -1,0 +1,8 @@
+====Movie Log Entry====
+Movie title: How to Train Your Dragon
+Release Year: 2010
+IMDB rating: 8.1
+Rotten Tomatoes rating: 99%Country of production: USA
+Language: English
+Plot: A hapless young Viking who aspires to hunt dragons becomes the unlikely friend of a young dragon himself, and learns there may be more to the creatures than he assumed.
+Actors: Jay Baruchel, Gerard Butler, Craig Ferguson, America Ferrera
