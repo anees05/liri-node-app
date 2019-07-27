@@ -1,14 +1,25 @@
-====Movie Log Entry====
-Movie title: How to Train Your Dragon
-Release Year: 2010
-IMDB rating: 8.1
-Rotten Tomatoes rating: 99%Country of production: USA
-Language: English
-Plot: A hapless young Viking who aspires to hunt dragons becomes the unlikely friend of a young dragon himself, and learns there may be more to the creatures than he assumed.
-Actors: Jay Baruchel, Gerard Butler, Craig Ferguson, America Ferrera
 
+=====Movie Log Entry=====
+Movie title: The Little Mermaid
+Release Year: 1989
+IMDB rating: 7.6
+Rotten Tomatoes rating: 93%
+Country of production: USA
+Language: English, French
+Plot: A mermaid princess makes a Faustian bargain in an attempt to become human and win a prince's love.
+Actors: Rene Auberjonois, Christopher Daniel Barnes, Jodi Benson, Pat Carroll
+=====Spotify Log Entry=====
+Artist(s): Billie Eilish
+Song Name: ocean eyes
+Song Link: https://api.spotify.com/v1/tracks/7hDVYcQq6MxkdJGweuCtl9
+Album: dont smile at me
 =====Concert Log Entry=====
-Name of the musician florida georgia line
-Name of the venue PNC Music Pavilion
-Name of city Charlotte
-Date of event 07-27-2019
+Name of the musician john mayer
+Name of the venue Madison Square Garden
+Name of city New York
+Date of event 07-26-2019
+=====Spotify Log Entry=====
+Artist(s): Backstreet Boys
+Song Name: I Want It That Way
+Song Link: https://api.spotify.com/v1/tracks/6e40mgJiCid5HRAGrbpGA6
+Album: The Hits--Chapter One

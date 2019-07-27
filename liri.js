@@ -40,13 +40,13 @@ function getBandsInTown(artist) {
 
     axios.get(bandQueryURL).then(
         function (response) {
-            console.log("===================");
+            console.log("====================");
             console.log(response);
             console.log("Name of the Venue " + response.data[0].venue.name + "\r\n");
             console.log("Venue location " + response.data[0].venue.city + "\r\n");
             console.log("Date of event " + moment(response.data[0].datetime).format("MM-DD-YYYY") + "\r\n");
 
-            var logConcert = "=====Concert Log Entry=====" + "\nName of the musician " + artist + "\nName of the venue " + response.data[0].venue.name + "\nName of city " + response.data[0].venue.city + "\nDate of event " +  moment(response.data[0].datetime).format("MM-DD-YYYY")
+            var logConcert = "\r\n=====Concert Log Entry=====" + "\nName of the musician " + artist + "\nName of the venue " + response.data[0].venue.name + "\nName of city " + response.data[0].venue.city + "\nDate of event " + moment(response.data[0].datetime).format("MM-DD-YYYY")
 
             fs.appendFile("log.txt", logConcert, function (err) {
                 if (err) throw err;
@@ -67,7 +67,7 @@ function getOMB(movie) {
         function (response) {
             // console.log(response.data);
 
-            console.log("==================");
+            console.log("====================");
             console.log("Title: " + response.data.Title + "\r\n");
             console.log("Year Released: " + response.data.Year + "\r\n");
             console.log("IMDB Rating: " + response.data.imdbRating + "\r\n");
@@ -77,7 +77,7 @@ function getOMB(movie) {
             console.log("Plot: " + response.data.Plot + "\r\n");
             console.log("Actors: " + response.data.Actors + "\r\n");
 
-            var logMovie = "====Movie Log Entry====" + "\nMovie title: " + response.data.Title + "\nRelease Year: " + response.data.Year + "\nIMDB rating: " + response.data.imdbRating + "\nRotten Tomatoes rating: " + response.data.Ratings[1].Value + "\Country of production: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors;
+            var logMovie = "\r\n=====Movie Log Entry=====" + "\nMovie title: " + response.data.Title + "\nRelease Year: " + response.data.Year + "\nIMDB rating: " + response.data.imdbRating + "\nRotten Tomatoes rating: " + response.data.Ratings[1].Value + "\nCountry of production: " + response.data.Country + "\nLanguage: " + response.data.Language + "\nPlot: " + response.data.Plot + "\nActors: " + response.data.Actors;
 
             fs.appendFile("log.txt", logMovie, function (err) {
                 if (err) throw (err);
@@ -100,13 +100,13 @@ function getSpotify(songName) {
         }
         console.log("Data for searching song: " + data.tracks.items[0]);
 
-        console.log("================");
+        console.log("====================");
         console.log("Artist(s) Name: " + data.tracks.items[0].album.artists[0].name + "\r\n");
         console.log("Song Name: " + data.tracks.items[0].name + "\r\n");
         console.log("Song Preview Link: " + data.tracks.items[0].href + "\r\n");
         console.log("Album: " + data.tracks.items[0].album.name + "\r\n");
 
-        var logSong = "=====Spotify Log Entry=====" + "\nArtist(s): " + data.tracks.items[0].album.artist[0].name + "\nSong Name: " + data.tracks.items[0].name + "\nSong Link: " + data.tracks.items[0].href + "\nAlbum: " + data.tracks.items[0].album.name
+        var logSong = "\r\n=====Spotify Log Entry=====" + "\nArtist(s): " + data.tracks.items[0].album.artists[0].name + "\nSong Name: " + data.tracks.items[0].name + "\nSong Link: " + data.tracks.items[0].href + "\nAlbum: " + data.tracks.items[0].album.name
 
         fs.appendFile("log.txt", logSong, function (err) {
             if (err) throw err;
