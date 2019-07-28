@@ -8,24 +8,22 @@ Liri is an application that uses Node.js to take a command and user input to ret
 ### spotify-this-song
 The spotify-this command uses the spotify API to search for a song provided by the user. The liri app will return the artist, the song name, a preview link to the song, and the album.
 
-<img width="801" alt="Screen Shot 2019-07-28 at 8 20 39 AM" src="https://user-images.githubusercontent.com/51647427/62006911-208c3580-b115-11e9-998e-0c606721fc2a.png"> 
+![spotify-this-song](https://user-images.githubusercontent.com/51647427/62007874-9cd84600-b120-11e9-8671-86b370b4e6fb.gif)
 
 ### concert-this
 The concert-this command uses the Bandsintown API to search for a band provided by the user. The liri app will return the band or artist name, the venue name, the venue location, and the date of the event.
 
-<img width="798" alt="Screen Shot 2019-07-28 at 8 24 23 AM" src="https://user-images.githubusercontent.com/51647427/62007043-d6a44f00-b116-11e9-92d4-44b4eb59562a.png">
-<img width="797" alt="Screen Shot 2019-07-28 at 8 24 37 AM" src="https://user-images.githubusercontent.com/51647427/62007044-d7d57c00-b116-11e9-8a22-347291ba0f09.png">
-
+![concert-this](https://user-images.githubusercontent.com/51647427/62007915-4fa8a400-b121-11e9-9df2-c8ce9ad96bb9.gif)
 
 ### movie-this
 The movie-this command uses the OMDB API to search for a movie provided by the user. The liri app will return the title of movie, the release year, the IMDB rating, Rotten Tomatoes rating, country of production, language, plot, and actors in movie.
 
-<img width="794" alt="Screen Shot 2019-07-28 at 8 26 04 AM" src="https://user-images.githubusercontent.com/51647427/62007049-ecb20f80-b116-11e9-9c22-ab8e822bf286.png"> 
+![movie-this](https://user-images.githubusercontent.com/51647427/62007918-53d4c180-b121-11e9-8ac3-2e3d4d33728e.gif)
 
 ### do-what-it-says
 The do-what-it-says command will read from the random.txt file, then uses spotify-this-song by default to search for the song "I Want it That Way".
 
-<img width="794" alt="Screen Shot 2019-07-28 at 8 26 28 AM" src="https://user-images.githubusercontent.com/51647427/62007051-f20f5a00-b116-11e9-9648-3d270786950d.png"> 
+![do-what-it-says](https://user-images.githubusercontent.com/51647427/62007919-57684880-b121-11e9-87fa-44b34dd0e269.gif)
 
 ### log.txt
 The liri app keeps a log of the results that were displayed.
